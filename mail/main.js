@@ -13,11 +13,15 @@ for(i = 0; i < listaEmail.length; i++){
 }
 //Display risultato
 if(checkPresenza){
-    alert("Sei presente nella lista di chi può accedere!")
+    alert("Sei presente nella lista di chi può accedere!");
 } else {
-    aggiunta = prompt("Non sei presente nella lista di chi può accedere, vuoi essere aggiunto? (scrivi \"si\" o \"no\")")
+    alert("Non sei presente nella Lista");
+    scelta()
+}
+//Function aggiunta scelta
+function scelta() {
+    aggiunta = prompt("Vuoi essere aggiunto? (scrivi \"si\" o \"no\")");
     aggiunta = aggiunta.toLowerCase();
-    console.log(aggiunta)
     if(aggiunta == "si"){
         listaEmail.push(emailUtente);
         alert("Sei stato aggiunto correttamente alla lista!");
@@ -25,6 +29,7 @@ if(checkPresenza){
     } else if (aggiunta == "no"){
         alert("Non sei stato aggiunto alla lista");
     } else {
-        alert("Non hai scelto si o no, non verrai aggiunto alla lista");
+        alert("Non hai scelto si o no, perfavore scegli");
+        scelta();
     }
 }
